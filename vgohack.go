@@ -21,7 +21,6 @@ func main() {
 	}
 	if os.Args[1] == "mod" && os.Args[2] == "-json" {
 		useListInstead()
-		return
 	}
 	other()
 }
@@ -73,8 +72,8 @@ func useListInstead() {
 					Version: j.Version,
 				},
 				New: modjson.Module{
-					Path:    j.Path,
-					Version: j.Version,
+					Path:    j.Replace.Path,
+					Version: j.Replace.Version,
 				},
 			})
 		}
